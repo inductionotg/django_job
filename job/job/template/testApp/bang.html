@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+      <link  rel="stylesheet" href="{% static "css\demo.css" %}" />
+    <title></title>
+  </head>
+  <body>
+    <h1>Banglore Jobs</h1>
+    <hr>
+    {% if jobs_list3 %}
+    <table id="tab">
+      <thead>
+        <th>Date</th>
+        <th>Company</th>
+        <th>Title</th>
+        <th>Eligibility</th>
+        <th>Address</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+      </thead>
+        {% for jobs in jobs_list3 %}
+      <tr>
+        <td>{{jobs.date}}</td>
+        <td>{{jobs.company}}</td>
+          <td>{{jobs.title}}</td>
+          <td>{{jobs.eligibility}}</td>
+          <td>{{jobs.address}}</td>
+          <td>{{jobs.email}}</td>
+          <td>{{jobs.phoneNumber}}</td>
+      </tr>
+        {% endfor %}
+    </table>
+  {% else %}
+  <p>No jobs Found in Banglore</p>
+  {% endif %}
+  </body>
+</html>
